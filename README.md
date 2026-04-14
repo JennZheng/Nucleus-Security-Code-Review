@@ -94,3 +94,9 @@ if __name__ == "__main__":
 - There is a resource leak as `db` is never closed
 - line 45 `WEBHOOK_SECRET = os.getenv("WEBHOOK_SECRET", "dev-secret")` is an unsafe fallback, fail fast if missing in production
 - should ensure request is actually from vendor
+
+# Code Challenge Follow Up Questions
+1. I was able to create a basic four function calculator.
+2. One challenge that was encountered during this was the frontend/backend communication. During the process, I had some issues with updating the UI correctly and handling the errors properly. Another challenge during the process was trying to figure out a way to evaluate user input without introduicing security risks. I solved this with an implimented parser using AST to control the operations instead of just using Python's eval. Remembering to handle edge cases, like zero division, slipped my mind when building the calculator, which led to an error when testing.
+3. If given unlimeted time, I would expand the calculator from a basic four function calculator into a scientific one. I would also try to impliment keyboard input instead of having the calculator just be mouse/on click.
+4. During coding process, I did have AI look overmy code to help with some of the challenges I ran into. It did well to remind me of edge cases to look out for. However, for thingsl ike frontend & backend communication challenges, it was a bit less helpful as the code spanned multiple files. To help improve the accurarcy in pinpointing what was wrong, I slowly went down the list of suggestion for what was wrong and updated the prompt each time its suggested fixes did not work. This allowed me to eventually pinpoint the file and section of code that was causing the communication error.
